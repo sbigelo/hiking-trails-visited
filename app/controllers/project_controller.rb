@@ -9,4 +9,12 @@ class ProjectController < ApplicationController
         end
     end
 
+    get '/projects/new' do
+        if logged_in?
+            erb :'/projects/create_projects'
+        else 
+            redirect to '/login'
+        end
+    end
+
 end

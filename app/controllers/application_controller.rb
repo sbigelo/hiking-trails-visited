@@ -5,6 +5,7 @@ class ApplicationController < Sinatra::Base
     configure do
         set :public_folder, 'public'
         set :views, 'app/views'
+        register 'sinatra/flash'
         enable :sessions
         set :session_secret, "password_security"
     end

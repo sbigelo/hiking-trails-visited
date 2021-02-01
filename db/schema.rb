@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.string "location"
     t.string "date_visited"
     t.integer "rating"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

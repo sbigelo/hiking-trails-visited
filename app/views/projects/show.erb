@@ -1,0 +1,24 @@
+
+
+<h2>Name: <%=@projects.name%> </h2>
+<h3>Location: <%=@projects.location%></h3>
+<h3>Date Visited: <%=@projects.date_visited%></h3>
+<h3>Rating: <%=@projects.rating%></h3>
+<br>
+<br>
+<br>
+<br>
+<h3>Created by: <%=@projects.user.username%></h3>
+<div>
+<%if current_user.projects.include?(@project)%>
+<form method="post" action="/projects/<%=@projects.id%>/delete">
+<input type="hidden" id="hidden" name="_method" value="Delete">
+<input type="submit" value="Delete Trip">
+</form>
+
+<form method="get" action="/projects/<%=@projects.id%>/edit">
+<input type="submit" value="Edit Trip">
+
+</form>
+<%end%>
+</div>

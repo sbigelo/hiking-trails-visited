@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[4.2]
       t.string :location
       t.string :date_visited
       t.integer :rating
+      t.integer :user_id
 
 
       t.timestamps null: false

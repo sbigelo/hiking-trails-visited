@@ -1,0 +1,11 @@
+<h2> Edit Trip: </h2>
+
+<form method="post" action="/projects/<%=@projects.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <input type="text" name="name" placeholder="<%=@projects.name%>">
+  <input type="text" name="location" placeholder="<%=@projects.location%>">
+  <input type="datetime-local" name="date_visited" data-date="" data-date-format="YYYY-MM-DD HH:mm" value="<%=@projects.date_visited%>">
+  <input type="number" name="rating" placeholder="<%=@projects.rating%>%" min="1" max="10">
+  <input type="submit" value="Submit">
+</form>
+

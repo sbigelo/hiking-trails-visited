@@ -1,9 +1,9 @@
-<h2>Welcome to all of your Hiking Trips!<br> Past, present, and future.</h2>
+<h2>Welcome to everyone's Hiking Trips!</h2><br>
 
 
 <nav>
   <% if logged_in? %>
-    <p>Welcome, <%=current_user.username %>!</p>
+    <p>Greetings, <%=current_user.username %>!</p>
     <a href="/projects/new"> Create New Trip </a><br><br>
     <a href="/users/<%=current_user.slug%>"> Your Trips </a><br><br>
     <br><br><br>

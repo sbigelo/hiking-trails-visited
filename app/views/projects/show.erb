@@ -1,6 +1,6 @@
 
 
-<h2>Name: <%=@projects.name%> </h2>
+<h2>Trail Name: <%=@projects.name%> </h2>
 <h3>Location: <%=@projects.location%></h3>
 <h3>Date Visited: <%=@projects.date_visited%></h3>
 <h3>Rating: <%=@projects.rating%></h3>
@@ -8,7 +8,7 @@
 <br>
 <br>
 <br>
-<h3>Created by: <%=@projects.user.username%></h3>
+<h3>Hiked by: <%=@projects.user.username%></h3>
 <div>
 <%if current_user.projects.include?(@projects)%> 
 <form method="post" action="/projects/<%=@projects.id%>/delete">

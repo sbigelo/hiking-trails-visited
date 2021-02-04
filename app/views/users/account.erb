@@ -1,0 +1,29 @@
+
+
+<h2>Hello <%=current_user.username %>!</h2>
+<h4>Here are your current hiking trips. </h4>
+<br>
+<div>
+<% @users.projects.each do |key|%>
+<h3>Name: <%= key.name %></h3>
+<div>
+<p>Location: <%=key.location%></p>
+<p>Date Visited: <%=key.date_visited%></p>
+<p>Rating: <%=key.rating%></p>
+</div>
+<br>
+<form method="post" action="/projects/<%=key.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Project">
+</form>
+<br>
+<form method="get" action="/projects/<%=key.id%>/edit">
+  <input type="submit" value="Edit Project">
+</form>
+<br>
+<form method="get" action="/projects/new">
+<input type="submit" value="Create New Trip">
+</form>
+</div>
+<%end%>
+

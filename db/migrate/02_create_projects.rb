@@ -1,4 +1,4 @@
-class CreateProjects < ActiveRecord::Migration[4.2]
+class CreateProjects < ActiveRecord::Migration[5.2]
   def change
     create_table :projects do |t|
       t.string :name
@@ -7,8 +7,6 @@ class CreateProjects < ActiveRecord::Migration[4.2]
       t.integer :rating
       t.integer :user_id
 
-
-      t.timestamps null: false
     end
   end
 end

@@ -70,7 +70,16 @@ class ProjectController < ApplicationController
         end
     end
 
-
+     delete '/projects/:id/delete' do
+        if logged_in?
+            @projects = Project.find_by_id(params[:id])
+            if @projects.user == current_user then @projects.delete else redirect '/login' end
+        else 
+            # flash[:error] = "You must be logged in."
+            redirect '/login'
+        end
+        redirect '/projects'
+    end
 
 
 

@@ -1,5 +1,16 @@
-<h1>Here is the list of your current Hiking Adventures!</h1>
+<h1>Here is the list of current Hiking Adventures!</h1>
 <br>
-<%@projects.each do |key|%>
-<%# <h4><a href="/projects/<%=key.id%>"><%=key.name%></a></h4> %>
+<%@projects.each_with_index do |key, i|%>
+<h4><%=i+1%>. <a href="/projects/<%=key.id%>"><%=key.name%></a></h4>
 <%end%>
+<br>
+<br>
+<br>
+<br>
+<form method="get" action="/projects/new">
+<input type="submit" value="Create New Trip"></form>
+<br><br>
+<form method="get" action="/logout">
+<input type="submit" value="Log Out"></form>
+
+

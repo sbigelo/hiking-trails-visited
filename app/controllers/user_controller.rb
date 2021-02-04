@@ -11,7 +11,7 @@ class UserController < ApplicationController
       if !logged_in?
       erb :'users/signup'
     else
-      redirect to '/index'
+      redirect '/index'
         end
     end
 
@@ -34,17 +34,6 @@ class UserController < ApplicationController
        !logged_in? ? (erb :'/users/login') : (redirect "/projects")
     end
 
-    post '/login' do
-        user = User.find_by(:username => params[:username])
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
-            redirect "/projects"
-        else
-            # flash[:error] = "Incorrect username or password. Please try again!"
-            redirect to "/singup"
-        end
-    end
-
     get '/logout' do
         if logged_in?
             session.destroy
@@ -53,5 +42,18 @@ class UserController < ApplicationController
             redirect '/'
         end
     end
+
+    post '/login' do
+        user = User.find_by(:username => params[:username])
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect "/projects"
+        else
+            # flash[:error] = "Incorrect username or password. Please try again!"
+            redirect "/login"
+        end
+    end
+
+
     
 end

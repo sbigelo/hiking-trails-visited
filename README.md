@@ -7,9 +7,9 @@ In this you are able to submit the hiking trails that you have visited and compa
 ## Usage
 
 1. Clone this repository.
-2. Type 'bundle' install in the terminal.
-3. Run 'rake db:migrate' in the terminal. 
-4. Run 'shotgun' in the terminal in order to see it work in your browser.
+2. Type `bundle` install in the terminal.
+3. Run `rake db:migrate` in the terminal. 
+4. Run `shotgun` in the terminal in order to see it work in your browser.
 
 ## Description
 

@@ -10,7 +10,7 @@
 <br>
 <h3>Created by: <%=@projects.user.username%></h3>
 <div>
-<%if current_user.projects.include?(@project)%>
+<%if current_user.projects.include?(@projects)%>
 <form method="post" action="/projects/<%=@projects.id%>/delete">
 <input type="hidden" id="hidden" name="_method" value="Delete">
 <input type="submit" value="Delete Trip">

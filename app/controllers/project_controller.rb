@@ -19,7 +19,7 @@ class ProjectController < ApplicationController
 
     post '/projects' do
         if params.empty?
-            # flash[:error] = "Every field must be filled out."
+            flash[:error] = "Every field must be filled out."
             redirect to '/projects/new'
         elsif logged_in? && !params.empty?
             @projects = current_user.projects.create(name: params[:name], location: params[:location], date_visited: params[:date_visited], rating: params[:rating])

@@ -4,9 +4,9 @@ include Slugify::InstanceMethods
 
 has_secure_password
 
-validates :username, :email, presence: true
-validates :username, :email, uniqueness: true
-validates :password, presence: true
+validates_presence_of :username, :email, :password
+validates :username, :uniqueness => {:case_sensitive => false}
+     
 has_many :projects
 
 end

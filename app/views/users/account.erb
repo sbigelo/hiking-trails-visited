@@ -12,6 +12,7 @@
 <p>Rating: <%=key.rating%></p>
 </div>
 <br>
+<%if current_user.projects.include?(@projects)%>
 <form method="post" action="/projects/<%=key.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Project">
@@ -20,6 +21,7 @@
 <form method="get" action="/projects/<%=key.id%>/edit">
   <input type="submit" value="Edit Project">
 </form>
+<%end%>
 <%end%>
 <br>
 <form method="get" action="/projects/new">
